@@ -69,3 +69,20 @@ Column|Type|Options|
 - belongs_to :user
 - belongs_to :group
 
+## messages_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :message
+- belongs_to :user
+
+## messages_groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :message
+- belongs_to :group
