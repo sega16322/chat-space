@@ -28,14 +28,12 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|username|string|null: false, unique:true|
 |email|string|null: false|
 |passward|string|null: false|
 ### Association
 - has_many :messages
-- has_many :comments
-- has_many :groups
-
+- has_many :groups, 
 
 
 ## groupsテーブル
@@ -46,7 +44,7 @@ Column|Type|Options|
 ### Association
 - has_many :messages
 - has_many :groups
-
+- has_many :users
 
 ## groups_usersテーブル
 |Column|Type|Options|
