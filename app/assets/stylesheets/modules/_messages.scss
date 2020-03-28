@@ -51,6 +51,7 @@ a{
     &__groups-list{
       background-color: #253e51;
       height: calc(100vh - 100px);
+      overflow: scroll;
       .group{
         height: 91px;
         width: 300px;
@@ -112,6 +113,7 @@ a{
       background-color: $base-white;
       height: calc(100vh - 190px);
       padding: 35px 0 0 40px;
+      overflow: scroll;
       .message{
         margin-bottom: 40px;
         .upper-message{
