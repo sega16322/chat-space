@@ -2,46 +2,46 @@ $(function(){
 
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="comment" data-message-id= + comment.id + >
+      var html = `<div class="comment" data-message-id= ${message.id} >
         <div class="upper-message">
           <div class="upper-message__user-name">
-            message.user_name 
+            ${message.user_name} 
           </div>
           <div class="upper-message__date">
-            message.created_at 
+            ${message.created_at} 
           </div>
         </div>
         <div class="lower-message">
           <p class="lower-message__content">
-            message.content 
+            ${message.content} 
           </p>
-          <img src="+ message.image + " class="lower-message__image" >
+          <img src="message.image  " class="lower-message__image" >
         </div>
       </div>`
     } else if (message.content) {
-      var html = `<div class="comment" data-message-id= + message.id + >
+      var html = `<div class="comment" data-message-id= ${message.id} >
         <div class="upper-message">
           <div class="upper-message__user-name">
-            message.user_name +
-          </div> +
+            ${message.user_name} 
+          </div> 
           <div class="upper-message__date">
-            message.created_at 
+            ${message.created_at} 
           </div>
         </div>
         <div class="lower-message">
           <p class="lower-message__content">
-            message.content 
+            ${message.content} 
           </p>
         </div>
       </div>`
     } else if (message.image) {
-      var html = `<div class="comment" data-message-id= + message.id + >
+      var html = `<div class="comment" data-message-id=  ${message.id}  >
         <div class="upper-message">
           <div class="upper-message__user-name">
-            message.user_name 
+            ${message.user_name} 
           </div>
           <div class="upper-message__date">
-            message.created_at 
+            ${message.created_at} 
           </div>
         </div>
         <div class="lower-message">
@@ -77,8 +77,7 @@ $(function(){
   })
 
   var reloadMessages = function() {
-    last_message_id = $('.comment:last').data("comment-id");
-
+    last_message_id = $('.comment:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -101,6 +100,6 @@ $(function(){
   }
 
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
+    setInterval(reloadMessages, 20000);
   }
 });
