@@ -49,7 +49,7 @@ a{
       }
     }
     &__groups-list{
-      background-color: #253e51;
+      background-color: #2f3e51;
       height: calc(100vh - 100px);
       overflow: scroll;
       .group{
@@ -114,6 +114,7 @@ a{
       height: calc(100vh - 190px);
       padding: 35px 0 0 40px;
       overflow: scroll;
+      background-color: #fafafa;
       .comment{
         margin-bottom: 40px;
         .upper-message{
